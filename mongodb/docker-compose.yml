@@ -6,8 +6,8 @@ services:
     image: mongo:4.4.6
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: cassbana-mongodb-user
-      MONGO_INITDB_ROOT_PASSWORD: cassbana123
+      MONGO_INITDB_ROOT_USERNAME: guest
+      MONGO_INITDB_ROOT_PASSWORD: secret
     ports:
       - 27017:27017
     volumes:
