@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+
+  my_rabbitmq:
+    image: heidiks/rabbitmq-delayed-message-exchange:3.8.9-management
+    container_name: rabbitmq
+    restart: on-failure
+    environment:
+      RABBITMQ_DEFAULT_USER: cassbana-rabbitmq-user
+      RABBITMQ_DEFAULT_PASS: cassbana123
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - rabbitmq:/var/lib/rabbitmq
+      - rabbitmq-logs:/var/log/rabbitmq
+
+volumes:
+ rabbitmq:
+ rabbitmq-logs:
