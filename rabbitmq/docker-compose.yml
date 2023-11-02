@@ -10,12 +10,12 @@ services:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: secret
     ports:
-      - 5672:5672
-      - 15672:15672
+      - "5672:5672"
+      - "15672:15672"
     volumes:
       - rabbitmq:/var/lib/rabbitmq
       - rabbitmq-logs:/var/log/rabbitmq
 
 volumes:
- rabbitmq:
- rabbitmq-logs:
+  rabbitmq:
+  rabbitmq-logs:
