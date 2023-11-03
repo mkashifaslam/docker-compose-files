@@ -2,15 +2,18 @@ version: "3.8"
 
 services:
   postgres:
-    image: postgres:15.1
+    image: postgres:${POSTGRES_TAG}
+    container_name: postgres-11
     restart: always
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
-      POSTGRES_DB: <your-db-name>
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - "127.0.0.1:5432:5432"
+      - ${POSTGRES_HOST}:${POSTGRES_PORT}:5432
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - postgres-11:/var/lib/postgresql/11/data
 
 volumes:
-  postgres:
+  postgres-11:
