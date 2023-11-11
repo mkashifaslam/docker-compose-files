@@ -16,7 +16,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
   api:
-    image: mkashifaslam/expense-tracker-api:latest
+    image: mkashifaslam/expense-tracker-server-prod:latest
     container_name: api-server
     depends_on:
       - postgres
@@ -25,7 +25,7 @@ services:
     ports:
       - "3005:3000"
   web:
-    image: mkashifaslam/expense-tracker-web:latest
+    image: mkashifaslam/expense-tracker-web-prod:latest
     container_name: webapp
     depends_on:
       - api
